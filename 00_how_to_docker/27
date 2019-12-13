@@ -1,0 +1,2 @@
+docker service ps engineering-bay
+docker service logs <id of specific service>
