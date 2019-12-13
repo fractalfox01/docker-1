@@ -1,0 +1,16 @@
+docker run -it --name Abathur -v ~/root:/root -p 3000:3000 python:2-slim bash
+apt-get update && apt-get upgrade && apt-get install vim && pip install Flask
+
+vim /root/app.py
+
+############################################################################################
+from flask import Flask
+app = Flask(__name__)
+@app.route('/')
+def index():
+    return ('<!DOCTYPE html><html><head></head><bod><h1>Hello World</h1></body></html>')
+if __name__ == "__main__":
+    app.run(host="0.0.0.0", port=3000)
+############################################################################################
+
+python /root/app.py
